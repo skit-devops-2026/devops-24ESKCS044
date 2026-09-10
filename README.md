@@ -7,17 +7,18 @@
 
 | Roll No. | Name | GitHub username |
 |---|---|---|
-| <roll> | <name> | <username> |
+| 24ESKCS044 | Anchal | Anchal |
 
 ## About
 
-<Two or three sentences on what this application does.>
+The Blood Donation Management System is a web application designed to help manage blood donors and blood donation information efficiently. It allows users to register as donors, view/search donor details, and find suitable blood groups when blood is needed.
+
 
 ## Tech stack
 
-- Frontend: <e.g. React>
-- Backend: <e.g. Node.js / Express>
-- Database: <e.g. PostgreSQL>
+- Frontend: HTML, CSS, JavaScript
+- Backend: Not implemented
+- Database: Not implemented
 
 ## Running locally
 
