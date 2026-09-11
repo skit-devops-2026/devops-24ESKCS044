@@ -11,13 +11,17 @@
 .PHONY: install test build run docker-build docker-up
 
 install:
-	@echo "TODO: install dependencies" && exit 1
+	@echo "No external dependencies required for the current HTML/CSS/JS project"
 
 test:
-	@echo "TODO: run the test suite" && exit 1
+	@test -f blood-donation-system/index.html
+	@grep -q "<html" blood-donation-system/index.html
+	@echo "Basic HTML tests passed"
 
 build:
-	@echo "TODO: build the project" && exit 1
+	@mkdir -p build
+	@cp -r blood-donation-system/* build/
+	@echo "Frontend build completed"
 
 run:
 	@echo "TODO: start the app locally" && exit 1
