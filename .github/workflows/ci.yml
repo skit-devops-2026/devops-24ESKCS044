@@ -20,15 +20,9 @@ jobs:
 
   # ---------------------------------------------------------------------------
   # M3 — YOUR WORK STARTS HERE.
-  #
-  # Uncomment the job below and make it pass. Fill in the Makefile targets for
-  # your stack; do not change the target names, because this file calls them.
-  #
-  # The pipeline must genuinely fail when your tests fail. Do not add
-  # continue-on-error or "|| true" to make it green.
   # ---------------------------------------------------------------------------
 
-    build-and-test:
+  build-and-test:
     name: Build and test
     runs-on: ubuntu-latest
     steps:
@@ -47,8 +41,6 @@ jobs:
 
   # ---------------------------------------------------------------------------
   # M4 — Containerization. Uncomment and complete when you get there.
-  # The push to the registry is what proves your build actually ran, so it is
-  # not optional.
   # ---------------------------------------------------------------------------
 
   # docker:
