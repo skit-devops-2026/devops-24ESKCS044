@@ -14,8 +14,7 @@ install:
 	@echo "No external dependencies required for the current HTML/CSS/JS project"
 
 test:
-	@powershell -ExecutionPolicy Bypass -File tests/test_blood_donation_system.ps1
-
+	@pwsh -File tests/test_blood_donation_system.ps1
 build:
 	@mkdir -p build
 	@cp -r blood-donation-system/* build/
