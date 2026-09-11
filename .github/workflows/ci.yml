@@ -16,6 +16,13 @@ jobs:
       - name: Run hygiene checks
         run: bash scripts/hygiene.sh
 
+ feature/ci-pipeline
+
+  # ---------------------------------------------------------------------------
+  # M3 — YOUR WORK STARTS HERE.
+  # ---------------------------------------------------------------------------
+
+main
   build-and-test:
     name: Build and test
     runs-on: ubuntu-latest
@@ -31,4 +38,37 @@ jobs:
         run: make test
 
       - name: Build project
+ feature/ci-pipeline
         run: make build
+
+        run: make build
+
+  # ---------------------------------------------------------------------------
+  # M4 — Containerization. Uncomment and complete when you get there.
+  # ---------------------------------------------------------------------------
+
+  # docker:
+  #   name: Build and push images
+  #   needs: build-and-test
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: read
+  #     packages: write
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: docker/login-action@v3
+  #       with:
+  #         registry: ghcr.io
+  #         username: ${{ github.actor }}
+  #         password: ${{ secrets.GITHUB_TOKEN }}
+  #     - uses: docker/build-push-action@v6
+  #       with:
+  #         context: ./backend
+  #         push: true
+  #         tags: ghcr.io/${{ github.repository }}-backend:${{ github.sha }}
+  #     # ... and the same for ./frontend
+
+  # ---------------------------------------------------------------------------
+  # M5 — Deployment. Add a deploy job here.
+  # ---------------------------------------------------------------------------
+ main
