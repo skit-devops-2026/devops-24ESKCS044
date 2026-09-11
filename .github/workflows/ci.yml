@@ -16,13 +16,10 @@ jobs:
       - name: Run hygiene checks
         run: bash scripts/hygiene.sh
 
- feature/ci-pipeline
-
   # ---------------------------------------------------------------------------
-  # M3 — YOUR WORK STARTS HERE.
+  # M3 — CI Pipeline with Automated Tests
   # ---------------------------------------------------------------------------
 
-main
   build-and-test:
     name: Build and test
     runs-on: ubuntu-latest
@@ -38,9 +35,6 @@ main
         run: make test
 
       - name: Build project
- feature/ci-pipeline
-        run: make build
-
         run: make build
 
   # ---------------------------------------------------------------------------
@@ -71,4 +65,3 @@ main
   # ---------------------------------------------------------------------------
   # M5 — Deployment. Add a deploy job here.
   # ---------------------------------------------------------------------------
- main
