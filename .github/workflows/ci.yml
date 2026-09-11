@@ -5,9 +5,6 @@ on:
   pull_request:
 
 jobs:
-  # ---------------------------------------------------------------------------
-  # Given to you. Do not delete this job.
-  # ---------------------------------------------------------------------------
   hygiene:
     name: Repository hygiene
     runs-on: ubuntu-latest
@@ -15,13 +12,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Run hygiene checks
         run: bash scripts/hygiene.sh
+
+ feature/ci-pipeline
 
   # ---------------------------------------------------------------------------
   # M3 — YOUR WORK STARTS HERE.
   # ---------------------------------------------------------------------------
 
+main
   build-and-test:
     name: Build and test
     runs-on: ubuntu-latest
@@ -37,6 +38,9 @@ jobs:
         run: make test
 
       - name: Build project
+ feature/ci-pipeline
+        run: make build
+
         run: make build
 
   # ---------------------------------------------------------------------------
@@ -67,3 +71,4 @@ jobs:
   # ---------------------------------------------------------------------------
   # M5 — Deployment. Add a deploy job here.
   # ---------------------------------------------------------------------------
+ main
