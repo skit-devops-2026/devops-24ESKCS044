@@ -16,10 +16,14 @@ install:
 test:
 	@pwsh -File tests/test_blood_donation_system.ps1
 build:
+ifeq ($(OS),Windows_NT)
 	@if not exist build mkdir build
 	@xcopy /E /I /Y blood-donation-system build
+else
+	@mkdir -p build
+	@cp -r blood-donation-system/* build/
+endif
 	@echo "Frontend build completed"
-
 run:
 	@echo "TODO: start the app locally" && exit 1
 
