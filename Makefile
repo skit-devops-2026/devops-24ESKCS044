@@ -16,8 +16,8 @@ install:
 test:
 	@pwsh -File tests/test_blood_donation_system.ps1
 build:
-	@mkdir -p build
-	@cp -r blood-donation-system/* build/
+	@if not exist build mkdir build
+	@xcopy /E /I /Y blood-donation-system build
 	@echo "Frontend build completed"
 
 run:
