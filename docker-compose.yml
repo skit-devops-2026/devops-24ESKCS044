@@ -1,0 +1,5 @@
+services:
+  blood-donation-system:
+    image: blood-donation-system:latest
+    ports:
+      - "8081:80"
