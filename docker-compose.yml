@@ -3,3 +3,12 @@ services:
     image: blood-donation-system:latest
     ports:
       - "8081:80"
+
+  nginx-exporter:
+    image: nginx/nginx-prometheus-exporter:1.4.2
+    command:
+      - "--nginx.scrape-uri=http://blood-donation-system/stub_status"
+    ports:
+      - "9113:9113"
+    depends_on:
+      - blood-donation-system
