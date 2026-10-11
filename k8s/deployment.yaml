@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blood-bank-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blood-bank
+  template:
+    metadata:
+      labels:
+        app: blood-bank
+    spec:
+      containers:
+        - name: blood-bank
+          image: aweenchal321/blood-donation-system:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
